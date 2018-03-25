@@ -18,9 +18,8 @@ function sassflag = crit_sass(a, size)
     sassalpha(i) = sassalpha(i) - abs(a(i,i)); %ajustando o alpha, tal qual o criterio das linhas
     sassalpha(i) = sassalpha(i)/abs(a(i,i));
   end
+  sassflag = max(sassalpha);
   disp('alfa maximo de sassenfeld');
-  disp(max(sassalpha));
-  if(max(sassalpha) < 1)
-    sassflag = 1;
+  disp(sassflag);
   end
   

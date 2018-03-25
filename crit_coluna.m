@@ -6,8 +6,7 @@ function columnflag = crit_coluna(a, size)
     columnalpha(i) = columnalpha(i) - abs(a(i,i));
     columnalpha(i) = columnalpha(i)/abs(a(i,i));
   end
+  columnflag = max(columnalpha);
   disp('alfa maximo de colunas');
-  disp(max(columnalpha));
-  if(max(columnalpha) < 1)
-    columnflag = 1;
+  disp(columnflag);
   end

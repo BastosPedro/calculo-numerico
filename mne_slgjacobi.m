@@ -4,13 +4,13 @@ function [x,nite] = mne_slgjacobi(a,b,x0,nmaxnite,tol)
   %uma matriz quadrada, tanto faz usar o número de linhas ou colunas  
   
   %checando se uma ou mais dos critérios foram obedecidos
-  if(crit_linha(a, a_column) == 1)
+  if(crit_linha(a, a_column) < 1)
     disp('vai convergir, de acordo com o criterio das linhas');
   end
-  if(crit_coluna(a, a_column) == 1)
+  if(crit_coluna(a, a_column) < 1)
     disp('vai convergir, de acordo com o criterio das colunas');
   end
-  if(crit_sass(a, a_column) == 1)
+  if(crit_sass(a, a_column) < 1)
     disp('vai convergir, de acordo com o criterio de sassenfeld');
   end
   %o código irá prosseguir se nenhum dos critérios for atendido

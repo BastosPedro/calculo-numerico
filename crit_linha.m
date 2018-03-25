@@ -8,8 +8,7 @@ function rowflag = crit_linha(a, size)
     rowalpha(i) = rowalpha(i) - abs(a(i,i)); %ajustando o alpha, retirando aii e dividindo por aii em seguida 
     rowalpha(i) = rowalpha(i)/(abs(a(i,i)));
   end  
+  rowflag = max(rowalpha);
   disp('alfa maximo de linhas');
-  disp(max(rowalpha));
-  if(max(rowalpha) < 1)
-    rowflag = 1;
+  disp(rowflag);
   end
