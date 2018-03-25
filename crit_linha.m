@@ -1,14 +1,13 @@
-function rowflag = crit_linha(a, size)
+function rowmax = crit_linha(a, size)
   %critério das linhas
   rowalpha = 0;
-  rowflag = 0; %se alguma das três bandeiras se tornar 1, então vamos saber
-               %que pelo menos um dos critérios foi obedecido
+  rowmax = 0; %rowmax guardará o maior valor de alpha
   for i = 1:1:size
     rowalpha(i) = sum(abs(a(i,:))); %dessa forma, sum nos dara a soma da linha
     rowalpha(i) = rowalpha(i) - abs(a(i,i)); %ajustando o alpha, retirando aii e dividindo por aii em seguida 
     rowalpha(i) = rowalpha(i)/(abs(a(i,i)));
   end  
-  rowflag = max(rowalpha);
+  rowmax = max(rowalpha);
   disp('alfa maximo de linhas');
-  disp(rowflag);
+  disp(rowmax);
   end

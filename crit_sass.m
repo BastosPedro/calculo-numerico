@@ -1,6 +1,6 @@
-function sassflag = crit_sass(a, size)
+function sassmax = crit_sass(a, size)
   %criterio de sassenfeld
-  sassflag = 0;
+  sassmax = 0; %sassmax será o maior valor de alpha
   sassalpha(1) = 0;
   for i=2:1:size %calcula o primeiro valor em sassalpha
     sassalpha(1) = sassalpha(1) + abs(a(1,i));
@@ -18,8 +18,8 @@ function sassflag = crit_sass(a, size)
     sassalpha(i) = sassalpha(i) - abs(a(i,i)); %ajustando o alpha, tal qual o criterio das linhas
     sassalpha(i) = sassalpha(i)/abs(a(i,i));
   end
-  sassflag = max(sassalpha);
+  sassmax = max(sassalpha);
   disp('alfa maximo de sassenfeld');
-  disp(sassflag);
+  disp(sassmax);
   end
   
